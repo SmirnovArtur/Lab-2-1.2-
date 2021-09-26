@@ -54,7 +54,7 @@ Ulitka init() {
 
 int main() {
     system("chcp 1251>nul");
-
+    
     int menu, type;
     Ulitka u = init();
 
@@ -64,61 +64,60 @@ int main() {
         std::cout << "\nMenu:\n\n-1 - Начать заново\n0 - Print R and a\n1 - set_R\n2 - set_a\n3 - Расстояние до начала координат\n4 - Радиус кривизны\n5 - Тип кривой\n6 - Площадь описываемую полярным радиусом\n7 - Уравнение в ДПСК\n8 - Clean CMD\n9 - Exit\n\nMenu: ";
         get_int(menu);
         std::cout << "\n-------------------------------------------------------------------" << std::endl;
-        if (menu == -1)
+        
+        switch (menu) {
+        case -1:
             u = init();
-
-        if (menu == 0)
+            break;
+        case 0:
             u.print_R_a();
-
-        if (menu == 1) {
+            break;
+        case 1:
             std::cout << "\nR = ";
             get_double(R);
             u.set_R(R);
-        }
-
-        if (menu == 2) {
+            break;
+        case 2:
             std::cout << "\na = ";
             get_double(a);
             u.set_a(a);
-        }
-
-        if (menu == 3) {
+            break;
+        case 3:
             std::cout << "\nfi = ";
             get_double(fi);
             std::cout << std::fixed << std::setprecision(3) << "\nl = " << u.len_to_beg(fi) << std::endl;
-        }
-
-        if (menu == 4) {
+            break;
+        case 4:
             std::cout << "\nfi = ";
             get_double(fi);
             std::cout << std::fixed << std::setprecision(3) << "\nr = " << u.rkriv(fi) << std::endl;
-        }
-
-        if (menu == 5)
+            break;
+        case 5:
             std::cout << "\nТип - " << u.type() << std::endl;
-
-        if (menu == 6)
+            break;
+        case 6:
             std::cout << std::fixed << std::setprecision(3) << "\nS = " << u.area() << std::endl;
-
-        if (menu == 7)
+            break;
+        case 7:
             std::cout << u.uravnenie() << std::endl;
-
-        if (menu == 8)
+            break;
+        case 8:
             system("cls");
-
-        if (menu == 9) {
+            break;
+        case 9:
             system("pause");
             exit(0);
-        }
-
-        if (menu < -1 || menu > 9) {
+            break;
+        default:
             std::cout << "Error!\nWrong comand!\nPress any key to try again!\n" << std::endl;
             system("pause");
             system("cls");
         }
 
-        std::cout << "\n-------------------------------------------------------------------" << std::endl;
-        system("pause");
+        if (menu != 8) {
+            std::cout << "\n-------------------------------------------------------------------" << std::endl;
+            system("pause");
+        }
 
     } while (menu != 9);
 

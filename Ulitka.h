@@ -10,6 +10,8 @@ private:
 public:
 	Ulitka(double radius = 1);
 	Ulitka(double radius, double A);
+	
+	~Ulitka() = default;
 
 	Ulitka& set_R(double radius = 1);                      //№2
 	Ulitka& set_a(double A = 1) { a = A; return *this; };  //№2

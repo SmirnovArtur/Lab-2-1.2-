@@ -24,7 +24,7 @@ TEST(Ulitka_Constructor, Init_Constructor) {
 
 }
 
-TEST(Ulitka_Setter, All_Constructors) {
+TEST(Ulitka_Setter, All_Setters) {
     Ulitka a, b(2), c(3, 4);
 
     a.set_R(2);

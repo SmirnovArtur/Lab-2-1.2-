@@ -115,7 +115,7 @@ int main() {
             system("cls");
         }
 
-        if (menu != 8) {
+        if (menu != 8 && (menu <= 9 && menu >= -1)) {
             std::cout << "\n-------------------------------------------------------------------" << std::endl;
             system("pause");
         }

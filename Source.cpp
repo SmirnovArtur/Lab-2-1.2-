@@ -56,9 +56,10 @@ int main() {
     system("chcp 1251>nul");
     
     int menu, type;
+    double R, a, fi;
+    
     Ulitka u = init();
 
-    double R, a, fi;
     do {
         std::cout << "\n-------------------------------------------------------------------" << std::endl;
         std::cout << "\nMenu:\n\n-1 - Начать заново\n0 - Print R and a\n1 - set_R\n2 - set_a\n3 - Расстояние до начала координат\n4 - Радиус кривизны\n5 - Тип кривой\n6 - Площадь описываемую полярным радиусом\n7 - Уравнение в ДПСК\n8 - Clean CMD\n9 - Exit\n\nMenu: ";

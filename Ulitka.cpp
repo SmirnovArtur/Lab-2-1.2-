@@ -30,7 +30,7 @@ Ulitka& Ulitka::set_R(double radius) { //№2
 	return *this;
 }
 
-double Ulitka::len_to_beg(double fi) { //№3
+double Ulitka::len_to_beg(double fi) const { //№3
 	double ro_fi, x, y, i, l;
 
 	i = fi * M_PI / 180; //deg to rad
@@ -43,7 +43,7 @@ double Ulitka::len_to_beg(double fi) { //№3
 	return l;
 }
 
-double Ulitka::rkriv(double fi) { //№4
+double Ulitka::rkriv(double fi) const { //№4
 	double r, r1, r2, chisl, znam, k, rKriv = 0, fi1;
 
 	fi1 = M_PI * fi / 180;
@@ -72,7 +72,7 @@ double Ulitka::rkriv(double fi) { //№4
 
 }
 
-const char* Ulitka::type() { //№5
+const char* Ulitka::type() const { //№5
 	const char* type = "Error";
 	if (2 * R > a)
 		type = "С петлёй";
@@ -92,14 +92,14 @@ const char* Ulitka::type() { //№5
 	return type;
 }
 
-double Ulitka::area() { //№6
+double Ulitka::area() const { //№6
 	double S;
 	S = (2 * M_PI * R * R) + (M_PI * a * a);
 
 	return S;
 }
 
-char* Ulitka::uravnenie(int key) { //№7
+char* Ulitka::uravnenie(int key) const { //№7
 	//Не требовалось по заданию
 	if (key == 1) {
 		std::cout << "\nУравнение улитки Паскаля в декартовой системе координат:\n";
@@ -144,6 +144,6 @@ char* Ulitka::uravnenie(int key) { //№7
 	return C;
 }
 
-void Ulitka::print_R_a() { //Напечатать R и a
+void Ulitka::print_R_a() const { //Напечатать R и a
 	std::cout << "\nR = " << std::fixed << std::setprecision(3) << R << "\na = " << std::fixed << std::setprecision(3) << a << std::endl << std::endl;
 }

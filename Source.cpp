@@ -3,14 +3,8 @@
 #include "Ulitka.h"
 
 
-int get_int(int& a) {
-    std::cin >> a;
-    if (!std::cin.good())
-        return -1;
-    return 1;
-}
-
-int get_double(double& a) {
+template < typename T >
+int get_num(T& a) {
     std::cin >> a;
     if (!std::cin.good())
         return -1;
@@ -30,16 +24,16 @@ Ulitka init() {
         }
         else if (type == 2) {
             std::cout << "R = ";
-            get_double(R);
+            get_num<double>(R);
             Ulitka u(R);
             std::cout << std::endl;
             return u;
         }
         else if (type == 3) {
             std::cout << "\nR = ";
-            get_double(R);
+            get_num<double>(R);
             std::cout << "a = ";
-            get_double(a);
+            get_num<double>(a);
             Ulitka u(R, a);
             std::cout << std::endl;
             return u;
@@ -63,7 +57,7 @@ int main() {
     do {
         std::cout << "\n-------------------------------------------------------------------" << std::endl;
         std::cout << "\nMenu:\n\n-1 - Начать заново\n0 - Print R and a\n1 - set_R\n2 - set_a\n3 - Расстояние до начала координат\n4 - Радиус кривизны\n5 - Тип кривой\n6 - Площадь описываемую полярным радиусом\n7 - Уравнение в ДПСК\n8 - Clean CMD\n9 - Exit\n\nMenu: ";
-        get_int(menu);
+        get_num<int>(menu);
         std::cout << "\n-------------------------------------------------------------------" << std::endl;
         
         switch (menu) {
@@ -75,22 +69,22 @@ int main() {
             break;
         case 1:
             std::cout << "\nR = ";
-            get_double(R);
+            get_num<double>(R);
             u.set_R(R);
             break;
         case 2:
             std::cout << "\na = ";
-            get_double(a);
+            get_num<double>(a);
             u.set_a(a);
             break;
         case 3:
             std::cout << "\nfi = ";
-            get_double(fi);
+            get_num<double>(fi);
             std::cout << std::fixed << std::setprecision(3) << "\nl = " << u.len_to_beg(fi) << std::endl;
             break;
         case 4:
             std::cout << "\nfi = ";
-            get_double(fi);
+            get_num<double>(fi);
             std::cout << std::fixed << std::setprecision(3) << "\nr = " << u.rkriv(fi) << std::endl;
             break;
         case 5:

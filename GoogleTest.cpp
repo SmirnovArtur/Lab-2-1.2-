@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "..\YourPath\Ulitka.h"
+#include "UlitkaLib.h"
 
 
 
